@@ -50,13 +50,24 @@ public class ArrayBasics {
             System.out.println();
         }
 
-        /*
-         * Array Operations
-        */
+        // OPERATIONS
 
         // Sorting
         Arrays.sort(arr);
         System.out.println(arr); // prints reference value
+
+        /*
+         * arr is primitive array of int
+         * System.out.println() does NOT override 'toString()' for primitive arrays
+         * instead it calls 'Object.toString()' which prints 'className@hashCode'
+         * [I@6e0be858 
+         * '[I' means array of int
+         * '@6e0be858' memory hash code in hex
+         * 
+         * System.out.println(Arrays.toString(arr));
+         * System.out.println(Arrays.deepToString(arr)); // for multi-dimensional arrays
+        */
+
         for(int i=0; i<arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
