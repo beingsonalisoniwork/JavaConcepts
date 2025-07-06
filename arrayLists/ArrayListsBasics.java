@@ -23,7 +23,7 @@ public class ArrayListsBasics {
          * kind of act as 'return Arrays.toString(this.toArray());'
         */
 
-        // OPERATIONS
+        // OPERATIONS ----------------------------------------------------------------------------------------
 
         ArrayList<String> strArr = new ArrayList<>();
 

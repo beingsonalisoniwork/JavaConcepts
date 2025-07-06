@@ -39,7 +39,7 @@ public class ArrayBasics {
             System.out.println(arr[i]);
         }
 
-        // 2D Array Declaration and Initialization
+        // 2D Array Declaration and Initialization --------------------------------------------------------------
         int[][] twoDimArr = new int[2][2];
 
         for(int i=0; i<twoDimArr.length; i++) {
@@ -50,7 +50,7 @@ public class ArrayBasics {
             System.out.println();
         }
 
-        // OPERATIONS
+        // OPERATIONS --------------------------------------------------------------------------------------------
 
         // Sorting
         Arrays.sort(arr);
