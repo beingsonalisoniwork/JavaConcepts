@@ -1,5 +1,7 @@
 package strings;
 
+import java.util.StringTokenizer;
+
 public class StringBasics {
     public static void main(String[] args) {
 
@@ -62,6 +64,7 @@ public class StringBasics {
         /*
          * STRING BUFFER ---------------------------------------------------------------------------
          * Mutable - modify without creating new obj
+         * Thread safe/synchronized
         */
 
         StringBuffer s = new StringBuffer();
@@ -92,7 +95,54 @@ public class StringBasics {
 
         /*
          * STRING BUILDER -----------------------------------------------------------------------------
-         * 
+         * Mutable
+         * Not thread safe
+         * Fast and memory effecient
+         * java.lang.Object > java.lang > Class StringBuilder
+         * same operations as of StringBuffer
+        */
+
+        StringBuilder sb = new StringBuilder("Hola!");
+        System.out.println(sb);
+        sb.append(" This is awesome.");
+        System.out.println(sb);
+
+        String sbToStr = sb.toString();
+        System.out.println(sbToStr);
+
+        System.out.println(sb.length());
+        sb.setCharAt(5, 'X');
+        System.out.println(sb);
+        sb.deleteCharAt(5);
+        System.out.println(sb);
+
+        /*
+         * STRING TOKENIZER ----------------------------------------------------------------------------
+         * used to break string into tokens
+         * 'whitespace' is default delimiter
+        */
+
+        String text = "Hello, how have you been?";
+        StringTokenizer st = new StringTokenizer(text);
+        System.out.println(st.countTokens());
+        while(st.hasMoreTokens()) {
+            System.out.println(st.nextToken());
+        } 
+        StringTokenizer st1 = new StringTokenizer(text, ",");
+        while(st1.hasMoreTokens()) {
+            System.out.println(st1.nextToken());
+        } 
+        StringTokenizer st2 = new StringTokenizer(text, ",", true);
+        while(st2.hasMoreTokens()) {
+            System.out.println(st2.nextToken());
+        } 
+
+        /*
+         * countTokens()
+         * hasMoreTokens()
+         * nextElement()
+         * hasMoreElements()
+         * nextToken()
         */
     }
 }
